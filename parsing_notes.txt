@@ -1,0 +1,18 @@
+Parsing .gtf file
+This is the long way but currently works. 
+
+1. run USE_FIRST.pl with .gtf file as input
+
+2. run USE_LAST.pl 
+
+3. remove duplicates with 
+	sort -u file_to_sort.txt > output_sorted.txt
+
+4. remove " and ; with
+	sed 's/;//g' sorted.txt > sorted1.txt
+and
+	sed 's/"//g' sorted1.txt > sorted2.txt
+	
+5. if need a certain order:
+	load the GeneID file with the correct order, and the sorted output file into Excel
+	use the find function ex: =LOOKUP(A1:A29, $E$1:$F$29	
